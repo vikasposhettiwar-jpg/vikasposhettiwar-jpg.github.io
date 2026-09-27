@@ -34,7 +34,7 @@ export function Contact() {
             </a>
             <Link
               to="/resume"
-              className="no-print inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors duration-200 hover:bg-primary-foreground/10"
+              className="no-print inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 bg-primary-foreground/10 px-6 py-3.5 text-sm font-semibold text-primary-foreground backdrop-blur-md transition-colors duration-200 hover:bg-primary-foreground/20"
             >
               <Download className="h-4 w-4" strokeWidth={2.4} />
               Download CV

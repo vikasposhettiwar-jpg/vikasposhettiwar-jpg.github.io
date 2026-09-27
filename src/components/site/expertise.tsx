@@ -10,7 +10,11 @@ const icons = {
 
 export function Expertise() {
   return (
-    <section id="expertise" className="relative bg-background py-20 lg:py-24">
+    <section id="expertise" className="relative overflow-hidden bg-background py-20 lg:py-24">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 top-1/3 h-[26rem] w-[26rem] rounded-full opacity-[0.07] blur-3xl [background-image:var(--gradient-hero)]"
+      />
       <DotField className="pointer-events-none absolute left-6 top-10 hidden h-24 w-28 opacity-60 md:block" />
 
       <div className="mx-auto w-full max-w-6xl px-5">
@@ -35,14 +39,14 @@ export function Expertise() {
                 className={`print-avoid-break relative flex flex-col rounded-3xl p-7 transition-transform duration-300 hover:-translate-y-1 ${
                   featured
                     ? "bg-primary text-primary-foreground shadow-lift"
-                    : "border border-hairline bg-card text-card-foreground shadow-soft"
+                    : "border border-white/60 bg-card/70 text-card-foreground shadow-soft backdrop-blur-xl"
                 }`}
               >
                 <span
                   className={`grid h-14 w-14 place-items-center rounded-2xl ${
                     featured
                       ? "bg-primary-foreground/15 text-primary-foreground"
-                      : "bg-primary-soft text-primary"
+                      : "bg-primary/10 text-primary"
                   }`}
                 >
                   <Icon className="h-6 w-6" strokeWidth={2.1} />

@@ -19,7 +19,15 @@ export function Work() {
   const visible = active === "All" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section id="work" className="relative bg-secondary/60 py-20 lg:py-24">
+    <section id="work" className="relative overflow-hidden bg-secondary/60 py-20 lg:py-24">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 top-1/4 h-[26rem] w-[26rem] rounded-full bg-primary opacity-[0.08] blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-32 bottom-0 h-80 w-80 rounded-full bg-amber opacity-[0.10] blur-3xl"
+      />
       <div className="mx-auto w-full max-w-6xl px-5">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
@@ -42,7 +50,7 @@ export function Work() {
                 className={`rounded-full px-4 py-2 text-xs font-semibold transition-colors duration-200 ${
                   active === filter
                     ? "bg-primary text-primary-foreground shadow-soft"
-                    : "border border-hairline bg-card text-muted-foreground hover:text-primary"
+                    : "border border-white/60 bg-card/70 text-muted-foreground backdrop-blur-md hover:text-primary"
                 }`}
               >
                 {filter}
@@ -55,7 +63,7 @@ export function Work() {
           {visible.map((project) => (
             <article
               key={project.title}
-              className="print-avoid-break group flex flex-col overflow-hidden rounded-3xl border border-hairline bg-card shadow-soft transition-transform duration-300 hover:-translate-y-1"
+              className="print-avoid-break group flex flex-col overflow-hidden rounded-3xl border border-white/60 bg-card/80 shadow-soft backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lift"
             >
               <div className="overflow-hidden bg-primary-soft">
                 <img
