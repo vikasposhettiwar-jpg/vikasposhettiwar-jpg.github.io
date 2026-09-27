@@ -22,9 +22,7 @@ export function SiteNav() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const linkClass = scrolled
-    ? "text-muted-foreground hover:text-primary"
-    : "text-primary-foreground/80 hover:text-primary-foreground";
+  const linkClass = "text-muted-foreground hover:text-primary";
 
   return (
     <header
@@ -37,19 +35,11 @@ export function SiteNav() {
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-5">
         <a
           href="#home"
-          className={`flex items-center gap-2.5 font-display text-base font-bold tracking-tight transition-colors ${
-            scrolled ? "text-ink" : "text-primary-foreground"
-          }`}
-        >
-          <span
-            className={`grid h-9 w-9 place-items-center rounded-xl text-sm font-bold transition-colors ${
-              scrolled
-                ? "bg-primary text-primary-foreground shadow-soft"
-                : "bg-primary-foreground text-primary"
-            }`}
+            className="flex items-center gap-2.5 font-display text-base font-bold tracking-tight text-ink transition-colors"
           >
-            VP
-          </span>
+            <span className="grid h-9 w-9 place-items-center rounded-xl bg-primary text-sm font-bold text-primary-foreground shadow-soft">
+              VP
+            </span>
           <span className="hidden sm:inline">Vikas Poshettiwar</span>
         </a>
 
@@ -78,11 +68,7 @@ export function SiteNav() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className={`grid h-10 w-10 place-items-center rounded-xl border transition-colors lg:hidden ${
-              scrolled || open
-                ? "border-hairline bg-card text-ink"
-                : "border-primary-foreground/30 bg-primary-foreground/10 text-primary-foreground"
-            }`}
+              className="grid h-10 w-10 place-items-center rounded-xl border border-hairline bg-card text-ink transition-colors lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
