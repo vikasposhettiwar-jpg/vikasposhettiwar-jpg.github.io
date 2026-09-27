@@ -16,12 +16,12 @@ export function Contact() {
             Contact
           </p>
           <h2 className="mt-4 text-balance-tight font-display text-3xl font-bold text-primary-foreground sm:text-5xl">
-            Let&rsquo;s build something that works
+            Have something in mind? Let&rsquo;s talk.
           </h2>
           <Squiggle className="mx-auto mt-5 h-4 w-44 text-amber" />
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/85">
-            Internships, open-source, or a project idea you want a second pair of hands on — the
-            fastest way to reach me is a call or a message on LinkedIn.
+            I&rsquo;d be glad to hear about an internship, a project, or even an idea you&rsquo;re
+            working through. You can call me or reach out on LinkedIn.
           </p>
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">

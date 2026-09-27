@@ -20,7 +20,7 @@ export function Credentials() {
             Certifications &amp; interests
           </p>
           <h2 className="mt-3 text-balance-tight font-display text-3xl font-bold text-ink sm:text-4xl">
-            Courses behind me, curiosity ahead
+            What I&rsquo;ve learned, and what I enjoy
           </h2>
         </div>
 

@@ -4,7 +4,7 @@ import { RingShape, StarBurst, TriangleShape } from "./decorations";
 
 const stats = [
   { value: "3rd", label: "Year of B.Tech", icon: Layers },
-  { value: "3", label: "Projects shipped", icon: Sparkles },
+  { value: "3", label: "Projects featured here", icon: Sparkles },
   { value: "2028", label: "Expected graduation", icon: CheckCircle2 },
 ];
 
@@ -34,9 +34,9 @@ export function About() {
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">{objective}</p>
 
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Right now that means I&rsquo;m a {profile.year.toLowerCase()} student at{" "}
-            {profile.institute} spending most of my free hours with Python and OpenCV — turning
-            coursework into things that actually run.
+            I&rsquo;m in my {profile.year.toLowerCase()} at {profile.institute}. Python and OpenCV
+            have been a big part of what I&rsquo;ve worked with so far, and I enjoy seeing an idea
+            turn into something I can actually use.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-2">
@@ -72,10 +72,10 @@ export function About() {
 
           <div className="print-avoid-break relative overflow-hidden rounded-3xl bg-primary p-6 text-primary-foreground shadow-lift">
             <StarBurst className="absolute -right-3 -top-3 h-12 w-12 text-amber" />
-            <p className="font-display text-lg font-semibold">Currently exploring</p>
+            <p className="font-display text-lg font-semibold">What I want to learn next</p>
             <p className="mt-3 text-sm leading-relaxed text-primary-foreground/85">
-              Deep learning fundamentals, model evaluation, and building small end-to-end
-              applications that a real person can click through.
+              I&rsquo;d like to go deeper into machine learning and keep building projects
+              that are useful beyond the classroom.
             </p>
           </div>
         </div>

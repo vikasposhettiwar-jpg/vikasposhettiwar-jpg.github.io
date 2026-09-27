@@ -23,7 +23,7 @@ export function Expertise() {
             Expertise
           </p>
           <h2 className="mt-3 text-balance-tight font-display text-3xl font-bold text-ink sm:text-4xl">
-            What I build with, and how far I take it
+            What I enjoy working on
           </h2>
           <Squiggle className="mt-4 h-4 w-40 text-amber" />
         </div>

@@ -2,9 +2,9 @@ export const profile = {
   name: "Vikas Poshettiwar",
   firstName: "Vikas",
   lastName: "Poshettiwar",
-  role: "AI / ML Engineer in the making",
+  role: "Computer Science student interested in AI & ML",
   tagline:
-    "Third-year Computer Science student building machine-learning and computer-vision systems that do something useful in the real world.",
+    "I'm a third-year Computer Science student who enjoys making ideas work — especially with machine learning and computer vision.",
   degree: "B.Tech – Computer Science & Engineering (AI & ML)",
   institute: "Mahatma Gandhi Institute of Technology",
   year: "3rd Year",
@@ -17,7 +17,7 @@ export const profile = {
 };
 
 export const objective =
-  "To build a successful career in Artificial Intelligence and Machine Learning by applying technical knowledge, developing innovative solutions, and continuously learning new technologies. Aim to contribute to real-world projects while growing as a skilled software and AI/ML professional.";
+  "I'm interested in how AI and machine learning can solve practical problems. I want to keep learning, put my skills to work on real projects, and grow into a thoughtful software and AI/ML professional.";
 
 export type SkillGroup = {
   title: string;
@@ -46,7 +46,7 @@ export const expertiseCards = [
     icon: "brain" as const,
     title: "Machine Learning",
     blurb:
-      "Turning raw environmental and agricultural data into trained models that predict, rank and explain outcomes.",
+      "I like working with data to find patterns and build useful predictions, as in my crop yield project.",
     tags: ["Scikit-learn", "Pandas", "NumPy"],
     featured: true,
   },
@@ -54,7 +54,7 @@ export const expertiseCards = [
     icon: "eye" as const,
     title: "Computer Vision",
     blurb:
-      "Detecting hands, shapes and motion with OpenCV, then wiring those signals into interactive applications.",
+      "I'm drawn to projects where a camera can become an input, like controlling slides with hand gestures.",
     tags: ["OpenCV", "Real-time video", "Gesture logic"],
     featured: false,
   },
@@ -62,7 +62,7 @@ export const expertiseCards = [
     icon: "code" as const,
     title: "Web Development",
     blurb:
-      "Building full applications end to end — Django on the back, clean HTML, CSS and JavaScript up front.",
+      "I also build web applications with Django, HTML, CSS and JavaScript, connecting the pieces people see to the code behind them.",
     tags: ["Django", "JavaScript", "HTML / CSS"],
     featured: false,
   },
@@ -81,7 +81,7 @@ export const projects: Project[] = [
     title: "Crop Yield Prediction",
     category: "Machine Learning",
     summary:
-      "An ML model that predicts agricultural yield from environmental and crop data, so farmers and planners can read a season before it happens.",
+      "I built a machine-learning model to predict crop yield using environmental and agricultural data.",
     stack: ["Python", "Pandas", "Scikit-learn", "Matplotlib"],
     image: "crop",
   },
@@ -89,7 +89,7 @@ export const projects: Project[] = [
     title: "Hand Gesture Control",
     category: "Computer Vision",
     summary:
-      "A computer-vision application that drives presentation slides through hand gestures — camera in, no clicker needed.",
+      "I made a computer-vision application that lets you control presentation slides with hand gestures instead of a clicker.",
     stack: ["Python", "OpenCV", "NumPy"],
     image: "gesture",
   },
@@ -97,7 +97,7 @@ export const projects: Project[] = [
     title: "Web Development Application",
     category: "Full Stack",
     summary:
-      "A web application built from scratch with Django behind the scenes and a responsive HTML, CSS and JavaScript front end.",
+      "I built a web application using Python and Django alongside HTML, CSS and JavaScript.",
     stack: ["Django", "Python", "HTML / CSS", "JavaScript"],
     image: "web",
   },
@@ -106,21 +106,21 @@ export const projects: Project[] = [
 export const processSteps = [
   {
     step: "01",
-    title: "Understand the data",
+    title: "Start with the problem",
     blurb:
-      "Collect it, clean it, and look at it long enough to know what questions it can actually answer.",
+      "I try to understand what needs solving before deciding which tools or data to use.",
   },
   {
     step: "02",
-    title: "Build and test",
+    title: "Try, test, improve",
     blurb:
-      "Train a simple model first, measure it honestly, then keep only the complexity that earns its place.",
+      "I start with something simple, see what works, and make changes as I learn.",
   },
   {
     step: "03",
-    title: "Ship and explain",
+    title: "Make it usable",
     blurb:
-      "Wrap the result in an interface someone can use, and be able to defend every design choice behind it.",
+      "A project matters more when someone else can understand it and use it.",
   },
 ];
 
@@ -128,12 +128,12 @@ export const certifications = [
   {
     title: "Programming Essentials in Python",
     issuer: "Python fundamentals and Django",
-    detail: "Coursework covering core Python programming and Django web development.",
+    detail: "Covered Python fundamentals and Django web development.",
   },
   {
     title: "AI Tools Workshop",
     issuer: "Be10x",
-    detail: "Hands-on workshop exploring practical AI tooling and workflows.",
+    detail: "Explored practical ways to use AI tools in a Be10x workshop.",
   },
 ];
 

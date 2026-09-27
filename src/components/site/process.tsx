@@ -17,7 +17,7 @@ export function Process() {
             Working process
           </p>
           <h2 className="mt-3 text-balance-tight font-display text-3xl font-bold text-ink sm:text-4xl">
-            How a project moves through my hands
+              How I approach a project
           </h2>
         </div>
 
