@@ -39,10 +39,6 @@ export const skillGroups: SkillGroup[] = [
     items: ["Django", "HTML", "CSS", "JavaScript"],
   },
   { title: "Vision Tooling", items: ["OpenCV", "Image processing", "Real-time capture"] },
-  {
-    title: "Ways of working",
-    items: ["Problem solving", "Teamwork", "Leadership", "Time management"],
-  },
 ];
 
 export const expertiseCards = [

@@ -55,7 +55,7 @@ function ResumePage() {
       </div>
 
       <article className="resume-sheet mx-auto my-4 rounded-3xl print:rounded-none">
-        <header className="border-b-2 border-primary pb-5">
+        <header className="border-b-2 border-primary pb-4">
           <h1 className="font-display text-[2.3rem] font-bold uppercase leading-none tracking-tight text-ink">
             {profile.name}
           </h1>
@@ -83,7 +83,7 @@ function ResumePage() {
         </Section>
 
         <Section title="Technical Skills">
-          <div className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
+          <div className="grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
             {skillGroups.map((group) => (
               <div key={group.title} className="print-avoid-break">
                 <p className="text-[0.72rem] font-bold uppercase tracking-wide text-primary">
@@ -98,7 +98,7 @@ function ResumePage() {
         </Section>
 
         <Section title="Projects">
-          <div className="grid gap-4">
+          <div className="grid gap-3">
             {projects.map((project) => (
               <div key={project.title} className="print-avoid-break border-l-2 border-primary pl-3">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-3">
@@ -145,7 +145,7 @@ function ResumePage() {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="print-avoid-break mt-5">
+    <section className="print-avoid-break mt-4">
       <h2 className="font-display text-[0.85rem] font-bold uppercase tracking-[0.14em] text-primary">
         {title}
       </h2>
@@ -156,7 +156,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 
 function MiniSection({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="print-avoid-break mt-5">
+    <div className="print-avoid-break mt-4">
       <h2 className="flex items-center gap-1.5 font-display text-[0.85rem] font-bold uppercase tracking-[0.14em] text-primary">
         <Award className="h-4 w-4" />
         {title}
