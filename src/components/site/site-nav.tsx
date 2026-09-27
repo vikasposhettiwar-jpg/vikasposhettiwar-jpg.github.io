@@ -68,9 +68,7 @@ export function SiteNav() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className={`grid h-10 w-10 place-items-center rounded-xl border transition-colors lg:hidden ${
-              open ? "border-hairline bg-card text-ink" : "border-hairline bg-card text-ink"
-            }`}
+              className="grid h-10 w-10 place-items-center rounded-xl border border-hairline bg-card text-ink transition-colors lg:hidden"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
