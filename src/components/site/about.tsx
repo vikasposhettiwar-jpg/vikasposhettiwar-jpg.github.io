@@ -11,6 +11,14 @@ const stats = [
 export function About() {
   return (
     <section id="about" className="relative overflow-hidden bg-secondary/60 py-20 lg:py-24">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -right-32 -top-24 h-[24rem] w-[24rem] rounded-full bg-amber opacity-[0.10] blur-3xl"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-primary opacity-[0.08] blur-3xl"
+      />
       <RingShape className="animate-drift pointer-events-none absolute right-10 top-12 h-16 w-16 text-primary/30" />
       <TriangleShape className="pointer-events-none absolute bottom-12 right-1/4 h-6 w-6 text-amber" />
 
@@ -35,7 +43,7 @@ export function About() {
             {softSkills.map((skill) => (
               <span
                 key={skill}
-                className="rounded-full border border-hairline bg-card px-3.5 py-1.5 text-xs font-medium text-foreground"
+                className="rounded-full border border-white/60 bg-card/70 px-3.5 py-1.5 text-xs font-medium text-foreground backdrop-blur-md"
               >
                 {skill}
               </span>
@@ -53,7 +61,7 @@ export function About() {
             return (
               <div
                 key={stat.label}
-                className="print-avoid-break rounded-3xl border border-hairline bg-card p-6 shadow-soft"
+                className="print-avoid-break rounded-3xl border border-white/60 bg-card/70 p-6 shadow-soft backdrop-blur-xl transition-transform duration-300 hover:-translate-y-1"
               >
                 <Icon className="h-5 w-5 text-primary" strokeWidth={2.2} />
                 <p className="mt-5 font-display text-4xl font-bold text-ink">{stat.value}</p>
