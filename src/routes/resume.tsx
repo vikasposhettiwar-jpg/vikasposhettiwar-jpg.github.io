@@ -35,7 +35,7 @@ export const Route = createFileRoute("/resume")({
 
 function ResumePage() {
   return (
-    <div className="min-h-screen bg-secondary/70 pb-16 pt-6 print:bg-background print:pt-0">
+    <div className="resume-page min-h-screen bg-secondary/70 pb-16 pt-6">
       <div className="no-print mx-auto flex w-full max-w-[210mm] flex-wrap items-center justify-between gap-3 px-5 py-4">
         <Link
           to="/"
@@ -55,17 +55,17 @@ function ResumePage() {
       </div>
 
       <article className="resume-sheet mx-auto my-4 rounded-3xl print:rounded-none">
-        <header className="border-b-2 border-primary pb-4">
-          <h1 className="font-display text-[2.1rem] font-bold uppercase leading-none tracking-tight text-ink">
+        <header className="border-b-2 border-primary pb-5">
+          <h1 className="font-display text-[2.3rem] font-bold uppercase leading-none tracking-tight text-ink">
             {profile.name}
           </h1>
-          <p className="mt-2 font-display text-[0.95rem] font-semibold text-primary">
+          <p className="mt-2.5 font-display text-base font-semibold text-primary">
             {profile.degree}
           </p>
-          <p className="mt-1 text-[0.82rem] text-muted-foreground">
+          <p className="mt-1 text-[0.85rem] text-muted-foreground">
             {profile.institute} · {profile.year} · {profile.graduation}
           </p>
-          <ul className="mt-2.5 flex flex-wrap gap-x-5 gap-y-1 text-[0.82rem] text-foreground">
+          <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-[0.85rem] text-foreground">
             <li className="inline-flex items-center gap-1.5">
               <Phone className="h-3.5 w-3.5 text-primary" /> {profile.phone}
             </li>
@@ -79,17 +79,17 @@ function ResumePage() {
         </header>
 
         <Section title="Career Objective">
-          <p className="text-[0.84rem] leading-relaxed text-foreground">{objective}</p>
+          <p className="text-[0.87rem] leading-relaxed text-foreground">{objective}</p>
         </Section>
 
         <Section title="Technical Skills">
-          <div className="grid gap-x-8 gap-y-2.5 sm:grid-cols-2">
+          <div className="grid gap-x-8 gap-y-3 sm:grid-cols-2">
             {skillGroups.map((group) => (
               <div key={group.title} className="print-avoid-break">
-                <p className="text-[0.7rem] font-bold uppercase tracking-wide text-primary">
+                <p className="text-[0.72rem] font-bold uppercase tracking-wide text-primary">
                   {group.title}
                 </p>
-                <p className="mt-0.5 text-[0.84rem] leading-snug text-foreground">
+                <p className="mt-1 text-[0.87rem] leading-snug text-foreground">
                   {group.items.join(", ")}
                 </p>
               </div>
@@ -98,21 +98,21 @@ function ResumePage() {
         </Section>
 
         <Section title="Projects">
-          <div className="grid gap-3">
+          <div className="grid gap-4">
             {projects.map((project) => (
               <div key={project.title} className="print-avoid-break border-l-2 border-primary pl-3">
                 <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-                  <h3 className="font-display text-[0.95rem] font-semibold text-ink">
+                  <h3 className="font-display text-base font-semibold text-ink">
                     {project.title}
                   </h3>
-                  <span className="text-[0.68rem] font-semibold uppercase tracking-wide text-muted-foreground">
+                  <span className="text-[0.7rem] font-semibold uppercase tracking-wide text-muted-foreground">
                     {project.category}
                   </span>
                 </div>
-                <p className="mt-0.5 text-[0.84rem] leading-snug text-foreground">
+                <p className="mt-1 text-[0.87rem] leading-snug text-foreground">
                   {project.summary}
                 </p>
-                <p className="mt-0.5 text-[0.75rem] font-medium text-muted-foreground">
+                <p className="mt-1 text-[0.78rem] font-medium text-muted-foreground">
                   {project.stack.join(" · ")}
                 </p>
               </div>
@@ -121,11 +121,11 @@ function ResumePage() {
         </Section>
 
         <Section title="Certifications & Workshops">
-          <div className="grid gap-2.5 sm:grid-cols-2">
+          <div className="grid gap-3 sm:grid-cols-2">
             {certifications.map((cert) => (
               <div key={cert.title} className="print-avoid-break flex gap-2">
-                <BadgeCheck className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
-                <p className="text-[0.84rem] leading-snug text-foreground">
+                <BadgeCheck className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                <p className="text-[0.87rem] leading-snug text-foreground">
                   <span className="font-semibold text-ink">{cert.title}</span> — {cert.detail}
                 </p>
               </div>
@@ -133,7 +133,7 @@ function ResumePage() {
           </div>
         </Section>
 
-        <div className="grid gap-x-6 gap-y-2 sm:grid-cols-3">
+        <div className="grid gap-x-6 gap-y-3 sm:grid-cols-3">
           <MiniSection title="Soft Skills" items={softSkills} />
           <MiniSection title="Languages" items={languages} />
           <MiniSection title="Interests" items={interests} />
@@ -145,27 +145,27 @@ function ResumePage() {
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <section className="print-avoid-break mt-4">
-      <h2 className="font-display text-[0.8rem] font-bold uppercase tracking-[0.14em] text-primary">
+    <section className="print-avoid-break mt-5">
+      <h2 className="font-display text-[0.85rem] font-bold uppercase tracking-[0.14em] text-primary">
         {title}
       </h2>
-      <div className="mt-2">{children}</div>
+      <div className="mt-2.5">{children}</div>
     </section>
   );
 }
 
 function MiniSection({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="print-avoid-break mt-4">
-      <h2 className="flex items-center gap-1.5 font-display text-[0.8rem] font-bold uppercase tracking-[0.14em] text-primary">
-        <Award className="h-3.5 w-3.5" />
+    <div className="print-avoid-break mt-5">
+      <h2 className="flex items-center gap-1.5 font-display text-[0.85rem] font-bold uppercase tracking-[0.14em] text-primary">
+        <Award className="h-4 w-4" />
         {title}
       </h2>
-      <ul className="mt-1.5 flex flex-wrap gap-1.5">
+      <ul className="mt-2 flex flex-wrap gap-1.5">
         {items.map((item) => (
           <li
             key={item}
-            className="rounded-md bg-secondary px-2 py-0.5 text-[0.75rem] font-medium text-secondary-foreground"
+            className="rounded-md bg-secondary px-2 py-0.5 text-[0.78rem] font-medium text-secondary-foreground"
           >
             {item}
           </li>

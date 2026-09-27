@@ -309,6 +309,13 @@
     display: none !important;
   }
 
+  .resume-page {
+    min-height: 0 !important;
+    padding: 0 !important;
+    background: oklch(1 0 0) !important;
+  }
+
+
   .resume-sheet {
     width: auto !important;
     min-height: 0 !important;
