@@ -1,24 +1,48 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SiteNav } from "@/components/site/site-nav";
+import { Hero } from "@/components/site/hero";
+import { Expertise } from "@/components/site/expertise";
+import { About } from "@/components/site/about";
+import { Process } from "@/components/site/process";
+import { Work } from "@/components/site/work";
+import { Credentials } from "@/components/site/credentials";
+import { Contact } from "@/components/site/contact";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
 export const Route = createFileRoute("/")({
-  component: Index,
+  head: () => ({
+    meta: [
+      { title: "Vikas Poshettiwar — AI/ML Student & Developer" },
+      {
+        name: "description",
+        content:
+          "Portfolio of Vikas Poshettiwar, a third-year Computer Science (AI & ML) student building machine-learning, computer-vision and Django projects.",
+      },
+      { property: "og:title", content: "Vikas Poshettiwar — AI/ML Student & Developer" },
+      {
+        property: "og:description",
+        content:
+          "Machine learning, computer vision and full-stack projects by a third-year CSE (AI & ML) student at Mahatma Gandhi Institute of Technology.",
+      },
+      { property: "og:type", content: "profile" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+  }),
+  component: PortfolioPage,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
-function Index() {
+function PortfolioPage() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background">
+      <SiteNav />
+      <main>
+        <Hero />
+        <Expertise />
+        <About />
+        <Process />
+        <Work />
+        <Credentials />
+        <Contact />
+      </main>
     </div>
   );
 }
