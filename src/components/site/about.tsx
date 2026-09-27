@@ -34,9 +34,9 @@ export function About() {
           <p className="mt-6 text-base leading-relaxed text-muted-foreground">{objective}</p>
 
           <p className="mt-4 text-base leading-relaxed text-muted-foreground">
-            Right now that means a {profile.year.toLowerCase()} student at {profile.institute}{" "}
-            spending most of his free hours with Python, OpenCV and Django — turning coursework
-            into things that actually run.
+            Right now that means I&rsquo;m a {profile.year.toLowerCase()} student at{" "}
+            {profile.institute} spending most of my free hours with Python and OpenCV — turning
+            coursework into things that actually run.
           </p>
 
           <div className="mt-9 flex flex-wrap gap-2">
