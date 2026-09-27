@@ -95,7 +95,7 @@ export function Hero() {
                   Technical Focus
                 </p>
                 <p className="mt-1.5 font-display text-base font-semibold tracking-tight text-primary-foreground">
-                  AI · Computer Vision · Django
+                  AI · Computer Vision · Machine Learning
                 </p>
                 <span className="pointer-events-none absolute -bottom-6 -right-6 h-20 w-20 rounded-full bg-amber opacity-25 blur-2xl" />
               </div>
