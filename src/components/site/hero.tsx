@@ -47,7 +47,7 @@ export function Hero() {
             </a>
           </div>
 
-          <dl className="mt-10 flex flex-wrap gap-x-8 gap-y-3 text-sm text-primary-foreground/80">
+          <dl className="mt-10 mb-4 flex flex-wrap gap-x-8 gap-y-3 text-sm text-primary-foreground/80">
             <div className="flex items-center gap-2">
               <GraduationCap className="h-4 w-4 text-amber" />
               <span>{profile.year}</span>
