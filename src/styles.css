@@ -290,7 +290,7 @@
   color: var(--color-ink);
   width: 210mm;
   min-height: 297mm;
-  padding: 16mm 15mm;
+  padding: 13mm 13mm;
   box-shadow: var(--shadow-lift);
 }
 

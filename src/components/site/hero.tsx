@@ -85,10 +85,8 @@ export function Hero() {
               <Row label="Focus" value="AI · CV · Django" />
             </div>
 
-            <span className="animate-float-soft absolute right-2 top-3 grid h-16 w-16 place-items-center rounded-2xl bg-amber text-center font-display text-[0.65rem] font-bold uppercase leading-tight text-amber-foreground shadow-amber sm:-right-4 sm:-top-4">
-              Open to
-              <br />
-              internships
+            <span className="animate-float-soft absolute right-3 -top-3 inline-flex items-center whitespace-nowrap rounded-full bg-amber px-3.5 py-1.5 text-center font-display text-[0.62rem] font-bold uppercase leading-tight tracking-wide text-amber-foreground shadow-amber sm:right-4 sm:-top-4">
+              Open to internships
             </span>
           </div>
         </div>
