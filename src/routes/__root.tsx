@@ -77,21 +77,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Vikas Poshettiwar — AI/ML Student & Developer" },
+      {
+        name: "description",
+        content:
+          "Portfolio and resume of Vikas Poshettiwar, a third-year Computer Science (AI & ML) student building machine-learning, computer-vision and Django projects.",
+      },
+      { name: "author", content: "Vikas Poshettiwar" },
+      { property: "og:title", content: "Vikas Poshettiwar — AI/ML Student & Developer" },
+      {
+        property: "og:description",
+        content:
+          "Machine learning, computer vision and full-stack projects by a third-year CSE (AI & ML) student at Mahatma Gandhi Institute of Technology.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&display=swap",
+      },
     ],
   }),
   shellComponent: RootShell,
