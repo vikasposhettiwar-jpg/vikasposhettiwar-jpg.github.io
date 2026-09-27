@@ -62,7 +62,7 @@ function ResumePage() {
           <p className="mt-2.5 font-display text-base font-semibold text-primary">
             {profile.degree}
           </p>
-          <p className="mt-1 text-[0.85rem] text-muted-foreground">
+          <p className="mt-1 text-[0.85rem] text-foreground/80">
             {profile.institute} · {profile.year} · {profile.graduation}
           </p>
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-[0.85rem] text-foreground">
@@ -112,7 +112,7 @@ function ResumePage() {
                 <p className="mt-1 text-[0.87rem] leading-snug text-foreground">
                   {project.summary}
                 </p>
-                <p className="mt-1 text-[0.78rem] font-medium text-muted-foreground">
+                <p className="mt-1 text-[0.78rem] font-medium text-foreground/75">
                   {project.stack.join(" · ")}
                 </p>
               </div>
