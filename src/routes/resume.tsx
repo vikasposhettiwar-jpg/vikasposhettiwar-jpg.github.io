@@ -173,7 +173,16 @@ function MiniSection({
         <Icon className="h-4 w-4" />
         {title}
       </h2>
-      <p className="mt-2 text-[0.9rem] leading-relaxed text-foreground">{items.join(" · ")}</p>
+          <ul className="mt-2 flex flex-wrap gap-1.5">
+            {items.map((item) => (
+              <li
+                key={item}
+                className="rounded-md bg-secondary px-2 py-0.5 text-[0.82rem] font-medium text-secondary-foreground"
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
     </div>
   );
 }

@@ -20,7 +20,7 @@ export function Hero() {
           <p className="mt-7 font-display text-lg font-medium text-primary-foreground/80">
             Hello, I&rsquo;m
           </p>
-          <h1 className="mt-1 font-display text-[clamp(2.6rem,9vw,5.2rem)] font-bold leading-[0.92] text-primary-foreground">
+          <h1 className="mt-1 font-display text-[clamp(2.1rem,8vw,5.2rem)] font-bold leading-[0.92] text-primary-foreground">
             VIKAS
             <br />
             <span className="text-amber">POSHETTIWAR</span>
@@ -85,7 +85,7 @@ export function Hero() {
               <Row label="Focus" value="AI · CV · Django" />
             </div>
 
-            <span className="animate-float-soft absolute -right-4 -top-4 grid h-16 w-16 place-items-center rounded-2xl bg-amber text-center font-display text-[0.65rem] font-bold uppercase leading-tight text-amber-foreground shadow-amber">
+            <span className="animate-float-soft absolute right-2 top-3 grid h-16 w-16 place-items-center rounded-2xl bg-amber text-center font-display text-[0.65rem] font-bold uppercase leading-tight text-amber-foreground shadow-amber sm:-right-4 sm:-top-4">
               Open to
               <br />
               internships

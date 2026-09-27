@@ -41,15 +41,15 @@ export function Credentials() {
             ))}
           </div>
 
-          <div className="grid gap-4">
-            <div className="print-avoid-break rounded-3xl bg-primary-soft p-6">
+          <div className="grid gap-4 lg:grid-rows-2">
+            <div className="print-avoid-break flex h-full flex-col rounded-3xl bg-primary-soft p-6">
               <Award className="h-5 w-5 text-primary" strokeWidth={2.2} />
               <h3 className="mt-4 font-display text-base font-semibold text-ink">Languages</h3>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
                 {languages.join(" · ")}
               </p>
             </div>
-            <div className="print-avoid-break rounded-3xl border border-hairline bg-card p-6 shadow-soft">
+            <div className="print-avoid-break flex h-full flex-col rounded-3xl border border-hairline bg-card p-6 shadow-soft">
               <Heart className="h-5 w-5 text-amber" strokeWidth={2.2} />
               <h3 className="mt-4 font-display text-base font-semibold text-ink">Interests</h3>
               <ul className="mt-2 space-y-1 text-sm leading-relaxed text-muted-foreground">
