@@ -11,6 +11,42 @@ const EMAILJS_TEMPLATE_ID = "template_p0670vu";
 const EMAILJS_PUBLIC_KEY = "NsbfDJSZjyAUqk9Nl";
 
 export function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      toast.error("Please fill in your name, email and message.");
+      return;
+    }
+    setSending(true);
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: name.trim(),
+          from_email: email.trim(),
+          message: message.trim(),
+        },
+        EMAILJS_PUBLIC_KEY,
+      );
+      toast.success("Message sent — thanks for reaching out!");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch {
+      toast.error("Something went wrong sending your message. Please try again.");
+    } finally {
+      setSending(false);
+    }
+  };
+
+  const inputClass =
+    "w-full rounded-2xl border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground placeholder:text-primary-foreground/50 backdrop-blur-md outline-none transition-colors focus:border-amber focus:bg-primary-foreground/15";
   return (
     <footer id="contact" className="relative bg-background pt-8">
       <div className="surface-hero relative overflow-hidden rounded-[2.5rem] px-5 py-16 lg:px-12 lg:py-20">
