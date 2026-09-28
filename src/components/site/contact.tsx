@@ -1,9 +1,52 @@
-import { Download, Github, Linkedin, Phone } from "lucide-react";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { Download, Github, Linkedin, Loader2, Phone, Send } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { toast } from "sonner";
 import { profile } from "@/lib/resume-data";
 import { DotField, RingShape, Squiggle, StarBurst } from "./decorations";
 
+const EMAILJS_SERVICE_ID = "service_3h3ivxa";
+const EMAILJS_TEMPLATE_ID = "template_p0670vu";
+const EMAILJS_PUBLIC_KEY = "NsbfDJSZjyAUqk9Nl";
+
 export function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [sending, setSending] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!name.trim() || !email.trim() || !message.trim()) {
+      toast.error("Please fill in your name, email and message.");
+      return;
+    }
+    setSending(true);
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: name.trim(),
+          from_email: email.trim(),
+          message: message.trim(),
+        },
+        EMAILJS_PUBLIC_KEY,
+      );
+      toast.success("Message sent — thanks for reaching out!");
+      setName("");
+      setEmail("");
+      setMessage("");
+    } catch {
+      toast.error("Something went wrong sending your message. Please try again.");
+    } finally {
+      setSending(false);
+    }
+  };
+
+  const inputClass =
+    "w-full rounded-2xl border border-primary-foreground/25 bg-primary-foreground/10 px-4 py-3 text-sm text-primary-foreground placeholder:text-primary-foreground/50 backdrop-blur-md outline-none transition-colors focus:border-amber focus:bg-primary-foreground/15";
   return (
     <footer id="contact" className="relative bg-background pt-8">
       <div className="surface-hero relative overflow-hidden rounded-[2.5rem] px-5 py-16 lg:px-12 lg:py-20">
@@ -21,8 +64,55 @@ export function Contact() {
           <Squiggle className="mx-auto mt-5 h-4 w-44 text-amber" />
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/85">
             I&rsquo;d be glad to hear about an internship, a project, or even an idea you&rsquo;re
-            working through. You can call me or reach out on LinkedIn.
+            working through. Drop me a message below, or call me anytime.
           </p>
+
+          <form
+            onSubmit={handleSubmit}
+            className="no-print mx-auto mt-9 grid max-w-xl gap-3 text-left"
+          >
+            <div className="grid gap-3 sm:grid-cols-2">
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Your name"
+                maxLength={100}
+                required
+                className={inputClass}
+              />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your email"
+                maxLength={255}
+                required
+                className={inputClass}
+              />
+            </div>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="What would you like to talk about?"
+              maxLength={1000}
+              required
+              rows={4}
+              className={`${inputClass} resize-none`}
+            />
+            <button
+              type="submit"
+              disabled={sending}
+              className="mx-auto mt-1 inline-flex items-center gap-2 rounded-full bg-amber px-7 py-3.5 text-sm font-semibold text-amber-foreground shadow-amber transition-transform duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
+            >
+              {sending ? (
+                <Loader2 className="h-4 w-4 animate-spin" strokeWidth={2.4} />
+              ) : (
+                <Send className="h-4 w-4" strokeWidth={2.4} />
+              )}
+              {sending ? "Sending…" : "Send message"}
+            </button>
+          </form>
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <a
