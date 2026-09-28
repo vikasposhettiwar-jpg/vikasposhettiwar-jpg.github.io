@@ -64,8 +64,55 @@ export function Contact() {
           <Squiggle className="mx-auto mt-5 h-4 w-44 text-amber" />
           <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-primary-foreground/85">
             I&rsquo;d be glad to hear about an internship, a project, or even an idea you&rsquo;re
-            working through. You can call me or reach out on LinkedIn.
+            working through. Drop me a message below, or call me anytime.
           </p>
+
+          <form
+            onSubmit={handleSubmit}
+            className="no-print mx-auto mt-9 grid max-w-xl gap-3 text-left"
+          >
+            <div className="grid gap-3 sm:grid-cols-2">
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="Your name"
+                maxLength={100}
+                required
+                className={inputClass}
+              />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Your email"
+                maxLength={255}
+                required
+                className={inputClass}
+              />
+            </div>
+            <textarea
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              placeholder="What would you like to talk about?"
+              maxLength={1000}
+              required
+              rows={4}
+              className={`${inputClass} resize-none`}
+            />
+            <button
+              type="submit"
+              disabled={sending}
+              className="mx-auto mt-1 inline-flex items-center gap-2 rounded-full bg-amber px-7 py-3.5 text-sm font-semibold text-amber-foreground shadow-amber transition-transform duration-200 hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:translate-y-0"
+            >
+              {sending ? (
+                <Loader2 className="h-4 w-4 animate-spin" strokeWidth={2.4} />
+              ) : (
+                <Send className="h-4 w-4" strokeWidth={2.4} />
+              )}
+              {sending ? "Sending…" : "Send message"}
+            </button>
+          </form>
 
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <a
