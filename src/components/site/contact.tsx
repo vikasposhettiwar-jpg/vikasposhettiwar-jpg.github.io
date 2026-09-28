@@ -1,7 +1,14 @@
-import { Download, Github, Linkedin, Phone } from "lucide-react";
+import { useState } from "react";
+import emailjs from "@emailjs/browser";
+import { Download, Github, Linkedin, Loader2, Phone, Send } from "lucide-react";
 import { Link } from "@tanstack/react-router";
+import { toast } from "sonner";
 import { profile } from "@/lib/resume-data";
 import { DotField, RingShape, Squiggle, StarBurst } from "./decorations";
+
+const EMAILJS_SERVICE_ID = "service_3h3ivxa";
+const EMAILJS_TEMPLATE_ID = "template_p0670vu";
+const EMAILJS_PUBLIC_KEY = "NsbfDJSZjyAUqk9Nl";
 
 export function Contact() {
   return (
