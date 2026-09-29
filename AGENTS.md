@@ -11,8 +11,7 @@
 
 ## Project rules
 
-- All résumé content lives in `src/lib/resume-data.ts`; both the portfolio page and `/resume` render from it. Why: one source keeps the site, the printed sheet and the PDF from drifting apart.
+- Résumé data for the portfolio sections lives in `src/lib/resume-data.ts`; the Download CV buttons link to the user-uploaded PDF asset at `src/assets/vikasposhettiwar_resume.pdf.asset.json`. Why: the CV file is user-owned — never edit or regenerate it; replace it only with a new upload.
 - Presentational sections live in `src/components/site/`, and colour/type tokens live in `src/styles.css`; components never hardcode colours. Why: theming, print styles and contrast stay controlled in one place.
-- `/resume` must fit one A4 page. Why: recruiters expect a single-sheet CV — verify by printing to PDF headlessly (`pdfinfo` shows 1 page) rather than eyeballing the screen.
 - The brand mark is a real file at `public/favicon.svg` referenced from the root route's `head().links`. Why: the favicon needs a stable path served outside the bundler.
 
