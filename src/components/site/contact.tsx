@@ -1,9 +1,9 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Download, Github, Linkedin, Loader2, Phone, Send } from "lucide-react";
-import { Link } from "@tanstack/react-router";
 import { toast } from "sonner";
 import { profile } from "@/lib/resume-data";
+import cvAsset from "@/assets/vikasposhettiwar_resume.pdf.asset.json";
 import { DotField, RingShape, Squiggle, StarBurst } from "./decorations";
 
 const EMAILJS_SERVICE_ID = "service_3h3ivxa";
@@ -122,13 +122,16 @@ export function Contact() {
               <Phone className="h-4 w-4" strokeWidth={2.4} />
               {profile.phone}
             </a>
-            <Link
-              to="/resume"
+            <a
+              href={cvAsset.url}
+              download="Vikas_Poshettiwar_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               className="no-print inline-flex items-center gap-2 rounded-full border border-primary-foreground/40 bg-primary-foreground/10 px-6 py-3.5 text-sm font-semibold text-primary-foreground backdrop-blur-md transition-colors duration-200 hover:bg-primary-foreground/20"
             >
               <Download className="h-4 w-4" strokeWidth={2.4} />
               Download CV
-            </Link>
+            </a>
           </div>
 
           <ul className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3 text-sm text-primary-foreground/80">
