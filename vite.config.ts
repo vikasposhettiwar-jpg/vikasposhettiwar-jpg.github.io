@@ -9,7 +9,7 @@ export default defineConfig({
       enabled: true,
       autoSubfolderIndex: true,
       autoStaticPathsDiscovery: true,
-      crawlLinks: true,
+      crawlLinks: false,
       failOnError: true,
     },
   },
