@@ -283,17 +283,6 @@
   }
 }
 
-/* ---- printable resume sheet ---- */
-
-@utility resume-sheet {
-  background-color: var(--color-card);
-  color: var(--color-ink);
-  width: 210mm;
-  min-height: 297mm;
-  padding: 13mm 13mm;
-  box-shadow: var(--shadow-lift);
-}
-
 @page {
   size: A4;
   margin: 0;
@@ -309,20 +298,6 @@
     display: none !important;
   }
 
-  .resume-page {
-    min-height: 0 !important;
-    padding: 0 !important;
-    background: oklch(1 0 0) !important;
-  }
-
-
-  .resume-sheet {
-    width: auto !important;
-    min-height: 0 !important;
-    padding: 10.5mm 12mm !important;
-    box-shadow: none !important;
-    margin: 0 !important;
-  }
 
   .print-avoid-break {
     break-inside: avoid;

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { Link } from "@tanstack/react-router";
 import { Download, Menu, X } from "lucide-react";
+import cvAsset from "@/assets/vikasposhettiwar_resume.pdf.asset.json";
 
 const links = [
   { label: "Home", href: "#home" },
@@ -56,13 +56,16 @@ export function SiteNav() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <Link
-            to="/resume"
+          <a
+            href={cvAsset.url}
+            download="Vikas_Poshettiwar_Resume.pdf"
+            target="_blank"
+            rel="noreferrer"
             className="hidden items-center gap-2 rounded-full bg-amber px-5 py-2.5 text-sm font-semibold text-amber-foreground shadow-amber transition-transform duration-200 hover:-translate-y-0.5 sm:inline-flex"
           >
             <Download className="h-4 w-4" strokeWidth={2.4} />
             Download CV
-          </Link>
+          </a>
           <button
             type="button"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -88,13 +91,16 @@ export function SiteNav() {
                 {link.label}
               </a>
             ))}
-            <Link
-              to="/resume"
+            <a
+              href={cvAsset.url}
+              download="Vikas_Poshettiwar_Resume.pdf"
+              target="_blank"
+              rel="noreferrer"
               onClick={() => setOpen(false)}
               className="rounded-xl bg-amber px-3 py-2.5 text-sm font-semibold text-amber-foreground"
             >
               Download CV
-            </Link>
+            </a>
           </nav>
         </div>
       ) : null}
