@@ -1,16 +1,77 @@
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+name: Deploy Portfolio to GitHub Pages
 
-export default defineConfig({
-  tanstackStart: {
-    server: {
-      entry: "server",
-    },
-    prerender: {
-      enabled: true,
-      autoSubfolderIndex: true,
-      autoStaticPathsDiscovery: true,
-      crawlLinks: true,
-      failOnError: true,
-    },
-  },
-});
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Build project
+        run: bun run build
+
+      - name: Find build output
+        run: |
+          echo "Looking for index.html..."
+          find . -name "index.html" -not -path "./node_modules/*"
+
+          echo "Looking for output directories..."
+          find . -maxdepth 3 -type d \( -name "dist" -o -name "public" -o -name ".output" \)
+
+      - name: Prepare GitHub Pages
+        run: |
+          rm -rf pages
+          mkdir -p pages
+
+          if [ -f "./dist/index.html" ]; then
+            cp -r ./dist/. ./pages/
+          elif [ -f "./.output/public/index.html" ]; then
+            cp -r ./.output/public/. ./pages/
+          else
+            echo "ERROR: No index.html found in the build output."
+            exit 1
+          fi
+
+          touch ./pages/.nojekyll
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./pages
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
